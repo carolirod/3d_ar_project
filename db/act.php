@@ -1,14 +1,28 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="../js/functions.js"></script>
 <?php
+/* In order to connect to database */
 include_once 'config.php';
 $db_connection = mysql_select_db($db, $connect);
+
+/* Check that database connection is working. */
 if(!$db_connection){
 	die('Error connecting to database');
 }
 
+/* Act should be new || remove || edit */
 if (isset($_GET['act'])) {
 	$act = $_GET['act'];
+
+	// Echo a form
+	/*
+	@action insert.php
+	@method POST
+	@filter (text, model_name)
+	@input 	(text, model_description)
+	@input 	(file, myFile)
+	@input 	(text, marker)
+	*/
 	if($act=="new"){
 		echo '
 		<form enctype="multipart/form-data" action="insert.php" method="POST"> 
