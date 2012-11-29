@@ -73,23 +73,27 @@ if(isset($_GET['id'])){
 			    echo '<form enctype="multipart/form-data" action="update.php" method="POST">
 			    <label for="model_name">Name</label>
 			    	<input name="model_name" id="model_name" type="text" value="'. $row->model_name .'"/><br/>
+
 				<label for="model_description">Description</label>		    	
 			    	<input name="model_description" id="model_description" type="text" value="'. $row->model_description.'" /><br/>
+			    
 			    <label for="model_file">File</label>
 			    	<input name="myFile" type="file" id="file"/><br/>
-			    <label for="position_lng">Longitude</label>
-			    	<input name="position_lng" id="position_lng" type="text" value="'. $row->position_lng .'" maxlength="9" /><br/>
-			    <label for="position_lat">Latitude</label>
-			    	<input name="position_lat" id="position_lat" type="text" value="'. $row->position_lat .'" maxlength="9" /><br/>
 			    
+			    <label for="marker_file">Marker</label>
+					<input name="marker" type="file" id="marker"/><br/>
 			    
 			    	<input name="id_num" type="hidden" value="'. $row->id_num .'" />
 			    	<button type="submit">Update</button><button id="cancel">Cancel</button>
 			    </form>';
 			    /*
-			    <!--<label for="texture_file">Texture file</label>
-			    	<input name="texture_file" id="texture_file" type="text" value="'. $row->texture_file .'" /><br/>-->
-			    */
+				Future use when location based. *coordfuture
+				<label for="position_lng">Longitude</label> 
+				<input name="position_lng" id="position_lng" type="text" maxlength="9" /><br/> 
+				
+				<label for="position_lat">Latitude</label> 
+				<input name="position_lat" id="position_lat" type="text" maxlength="9" /><br/> 	
+				*/
 			}
 
 	} else {
