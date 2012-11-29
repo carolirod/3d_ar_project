@@ -35,7 +35,7 @@
 
 				$num_rows = mysql_num_rows($result);
 				echo "<tr>
-						<th>NAME</th> <th>DESCRIPTION</th> <th>LOCATION</th> <th>FILE</th> <!--<th>TEXTURE</th>--> <th>OPTIONS</th>
+						<th>NAME</th> <th>DESCRIPTION</th> <th>LOCATION</th> <th>FILE</th> <th>MARKER</th> <th>OPTIONS</th>
 					  </tr>";
 					for ($i=0; $i <= $num_rows-1 ; $i++) { 
 						while ($row = mysql_fetch_object($result_table)) {
@@ -45,15 +45,7 @@
 								<td width="30%"><p>'.$row->model_description.'</p></td>
 								<td><p>Longitude: '.$row->position_lng.' , Latitude: '.$row->position_lat.'</td>
 								<td><p>'.$row->model_file.'</p></td>
-								<td><p>';
-							/*
-							if ($row->texture_file == "") {
-								echo "No texture file";
-							} else {
-								echo $row->texture_file;
-							};
-							*/
-						echo '</p></td>
+								<td><img src="" />'.$row->marker_file_name.'</td>
 								<td><button name="remove" id="'.$row->id_num.'">Remove</button> 
 								<button name="edit" id="'.$row->id_num.'">Edit</button></td>
 							</tr>';

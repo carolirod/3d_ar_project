@@ -35,6 +35,9 @@ if (isset($_GET['act'])) {
 			<label for="model_file">File</label> 
 			<input name="myFile" type="file" id="file"/><br/> 
 			
+			<label for="marker_file">Marker</label>
+			<input name="marker" type="file" id="marker"/><br/>
+
 			<label for="position_lng">Longitude</label> 
 			<input name="position_lng" id="position_lng" type="text" maxlength="9" /><br/> 
 			

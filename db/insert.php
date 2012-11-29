@@ -4,16 +4,28 @@ include_once 'config.php';
 $modelName = $_POST['model_name'];
 $modelDescription = $_POST['model_description'];
 
-$modelFilePath = 'http://'.$_SERVER['HTTP_HOST'].'/page/objects/';
-//$modelFilePath = $_SERVER['HTTP_HOST'].'/junaio/page/objects/';
-$modelFileName = $_FILES['myFile']['name'];
-$modelFilePath .=  $modelFileName;
-
 $positionLatitude = $_POST['position_lat'];
 $positionLongitud = $_POST['position_lng'];
 $positionAltitude = 0;
 
 if(isset($_FILES['myFile'])){
+	/*
+	Set server path to 	$modelFilePath
+	Set model file name $modelFileName
+	Add filename to path$modelFilePath
+	*/
+	$modelFilePath = 'http://'.$_SERVER['HTTP_HOST'].'/page/objects/';
+	//$modelFilePath = $_SERVER['HTTP_HOST'].'/junaio/page/objects/';
+	$modelFileName = $_FILES['myFile']['name'];
+	$modelFilePath .=  $modelFileName;
+	/*
+	Set marker	$marker
+	*/
+	$markerFileName = $_FILES['marker']['name'];
+
+	/*
+	Start to handle the modelfile
+	*/
 	$errors = array();
 	$allowed_ext = array('obj', 'zip', 'mtl');
 
@@ -42,9 +54,9 @@ if(isset($_FILES['myFile'])){
 		
 			$query = "
 				INSERT INTO `poi`.`tbl_3d` (
-					`id_num` , `model_name` , `model_description` , `model_file` , `position_lat` , `position_lng` , `position_alt` )
+					`id_num` , `model_name` , `model_description` , `model_file` , `marker_file_name` , `position_lat` , `position_lng` , `position_alt` )
 				VALUES (
-					NULL , '". $modelName ."', '". $modelDescription ."', '". $modelFilePath ."', '". $positionLatitude ."', '". $positionLongitud ."',
+					NULL , '". $modelName ."', '". $modelDescription ."', '". $modelFilePath ."', '". $markerFileName ."' , '". $positionLatitude ."', '". $positionLongitud ."',
 					 '". $positionAltitude ."'); ";
 
 			$sendQuery = mysql_query($query);
