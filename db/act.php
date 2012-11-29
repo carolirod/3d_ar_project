@@ -37,19 +37,17 @@ if (isset($_GET['act'])) {
 			
 			<label for="marker_file">Marker</label>
 			<input name="marker" type="file" id="marker"/><br/>
-
-			<label for="position_lng">Longitude</label> 
-			<input name="position_lng" id="position_lng" type="text" maxlength="9" /><br/> 
-			
-			<label for="position_lat">Latitude</label> 
-			<input name="position_lat" id="position_lat" type="text" maxlength="9" /><br/> 
-			
 		<button type="submit">Create</button><button id="cancel">Cancel</button>
 		</form>
 
 		';
 		/*
-		<label for="texture_file">Texture file</label> <input name="texture_file" id="texture_file" type="text" /><br/> 
+		Future use when location based. *coordfuture
+		<label for="position_lng">Longitude</label> 
+		<input name="position_lng" id="position_lng" type="text" maxlength="9" /><br/> 
+		
+		<label for="position_lat">Latitude</label> 
+		<input name="position_lat" id="position_lat" type="text" maxlength="9" /><br/> 	
 		*/
 	}
 }

@@ -1,11 +1,18 @@
 // Javascript Document
 
 $(document).ready(function(){
-	/*
-	$('button').click(function () {
-		$('input');
-	});
-*/
+
+	$('form').submit(function checkEmpty() {
+	   	var empty = false;
+       	$("input").each(function() {
+           empty = ($(this).val() == "") ? true : empty;
+    	});
+	    if(empty) {
+	        alert("All fields are mandatory");
+	        $(':submit').die();
+       	};
+     });
+
 	$('button[name*="remove"]').click(function(){
 		var currentID = $(this).attr('id');
 		IDtoPHP(currentID, "remove");
@@ -21,6 +28,8 @@ $(document).ready(function(){
 	$('#cancel').click(function(){
 		window.location.href = "../index.php";
 	})
+
+
 });
 
 function IDtoPHP(id, act) { 

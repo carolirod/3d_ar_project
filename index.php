@@ -45,7 +45,7 @@
 								<td width="30%"><p>'.$row->model_description.'</p></td>
 								<td><p>Longitude: '.$row->position_lng.' , Latitude: '.$row->position_lat.'</td>
 								<td><p>'.$row->model_file.'</p></td>
-								<td><img src="" />'.$row->marker_file_name.'</td>
+								<td><img src="markers/'.$row->marker_file_name.'" width="150" height="100" /></td>
 								<td><button name="remove" id="'.$row->id_num.'">Remove</button> 
 								<button name="edit" id="'.$row->id_num.'">Edit</button></td>
 							</tr>';
