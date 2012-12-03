@@ -1,7 +1,7 @@
 // Javascript Document
 
 $(document).ready(function(){
-
+/*
 	$('form').submit(function checkEmpty() {
 	   	var empty = false;
        	$("input").each(function() {
@@ -12,7 +12,7 @@ $(document).ready(function(){
 	        $(':submit').die();
        	};
      });
-
+*/
 	$('button[name*="remove"]').click(function(){
 		var currentID = $(this).attr('id');
 		IDtoPHP(currentID, "remove");
