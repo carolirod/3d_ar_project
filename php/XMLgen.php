@@ -60,8 +60,14 @@ foreach($data as $poi) {
 				$scale, //scale
 				new ArelRotation(ArelRotation::ROTATION_EULERDEG, array(0,0,0))
 			);
-		$oObject->addParameter('o','1.57,0,0');
 		$oObject->setMaxDistance(5000);
+		$oObject->addParameter('o','1.57,0,0');
+		//$oObject->setRotation($rotation);		
+		
+		$popup = new ArelPopup();
+		$popup->setDescription($description);
+		$oObject->setPopup($popup);
+
 		//output one object
 		ArelXMLHelper::outputObject($oObject);
 };

@@ -74,7 +74,7 @@ if(isset($_FILES)){
 					//header('Location: http://'.$host.'/page/index.php?msg=Updated successfully');	
 				}*/
 			} else {
-				die("Not uploaded");
+				die(print_r($_FILES['myFile']) .' was not uploaded');
 				$host  = $_SERVER['HTTP_HOST'];
 				header('Location: http://'.$host.'/page/index.php?msg=Could NOT update');
 			}
@@ -136,7 +136,7 @@ if(isset($_FILES)){
 							//header('Location: http://'.$host.'/page/index.php?msg=Updated successfully');	
 						}*/
 				} else {
-						die("Not uploaded");
+					die(print_r($_FILES['marker']) .' was not uploaded');
 						$host  = $_SERVER['HTTP_HOST'];
 						header('Location: http://'.$host.'/page/index.php?msg=Could NOT update');
 				}	
@@ -159,8 +159,8 @@ if(!$sendQuery){
 	die('error sending query'. mysql_error());
 } else {
 	$host  = $_SERVER['HTTP_HOST'];
-	header('Location: http://'.$host.'/junaio/page/index.php?msg=Updated successfully');	
-	//header('Location: http://'.$host.'/page/index.php?msg=Updated successfully');	
+	//header('Location: http://'.$host.'/junaio/page/index.php?msg=Updated successfully');	
+	header('Location: http://'.$host.'/page/index.php?msg=Updated successfully');	
 }
 
 
