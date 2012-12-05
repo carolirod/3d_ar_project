@@ -3,8 +3,8 @@ include_once 'config.php';
 
 $modelName = $_POST['model_name'];
 $modelDescription = $_POST['model_description'];
-$positionLatitude = $_POST['position_lat'];
-$positionLongitud = $_POST['position_lng'];
+//$positionLatitude = $_POST['position_lat'];
+//$positionLongitud = $_POST['position_lng'];
 $positionAltitude = 0;
 
 if(isset($_FILES)){
@@ -83,8 +83,8 @@ if(isset($_FILES)){
 				die('error sending query'. mysql_error());
 			} else {
 				$host  = $_SERVER['HTTP_HOST'];
-				//header('Location: http://'.$host.'/page/index.php?msg=Creation was successful');
-				header('Location: http://'.$host.'/junaio/page/index.php?msg=Creation was successful');
+				header('Location: http://'.$host.'/page/index.php?msg=Creation was successful');
+				//header('Location: http://'.$host.'/junaio/page/index.php?msg=Creation was successful');
 			};				
 		} else {
 			$host  = $_SERVER['HTTP_HOST'];

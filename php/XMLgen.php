@@ -50,7 +50,10 @@ foreach($data as $poi) {
 		$modelFile = $poi['model_file'];
 		$position = array($poi['position_lat'], $poi['position_lng'],$poi['position_alt']);
 		$scale = array(1,1,1);
+		//$marker = 'http://'.$_SERVER['HTTP_HOST'].'/page/markers/'. $poi['marker_file_name'];
+		$marker = $poi['marker_file_name'];
 
+		//$oObject = ArelXMLHelper::start();
 		$oObject = ArelXMLHelper::createLocationBasedModel3D(
 				$id,
 				$name,
@@ -62,6 +65,7 @@ foreach($data as $poi) {
 			);
 		$oObject->setMaxDistance(5000);
 		$oObject->addParameter('o','1.57,0,0');
+		//$oObject->addParameter('marker', $marker);
 		//$oObject->setRotation($rotation);		
 		
 		$popup = new ArelPopup();

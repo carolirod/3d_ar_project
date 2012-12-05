@@ -6,8 +6,8 @@ $errors = array();
 $id = $_POST['id_num'];
 $modelName = $_POST['model_name'];
 $modelDescription = $_POST['model_description'];
-$positionLatitude = $_POST['position_lat'];
-$positionLongitud = $_POST['position_lng'];
+//$positionLatitude = $_POST['position_lat'];
+//$positionLongitud = $_POST['position_lng'];
 $positionAltitude = 0;
 
 if(isset($_FILES)){
@@ -113,14 +113,13 @@ if(isset($_FILES)){
 			$all_errors.= '<span style="color:red;">';
 			foreach ($errors as $error) {
 				$all_errors .= $error. '<br/>';
-		}
-		
+			}
 		$all_errors .= '</span><br/>Go back and choose another file please.';
 		die($all_errors);
 		
 		} else {
 			/* Move model and marker file to corresponding folders */
-				if(move_uploaded_file($file_tmp_marker, '../markers/'.$file_name_marker)){
+				if(move_uploaded_file($file_tmp_marker, '../markers/'. $file_name_marker)){
 						$query = "
 							UPDATE `poi`.`tbl_3d` SET 
 							`marker_file_name` = '". $markerFileName ."'
@@ -136,11 +135,16 @@ if(isset($_FILES)){
 							//header('Location: http://'.$host.'/page/index.php?msg=Updated successfully');	
 						}*/
 				} else {
-					die(print_r($_FILES['marker']) .' was not uploaded');
+					die(print_r($_FILES['marker']) .' was not uploded');
 						$host  = $_SERVER['HTTP_HOST'];
 						header('Location: http://'.$host.'/page/index.php?msg=Could NOT update');
+				/* Finish the marker's */
 				}	
+
+		/* Finish upload and update of marker */
 		}
+
+	
 	}
 
 }
