@@ -53,6 +53,7 @@ foreach($data as $poi) {
 		//$marker = 'http://'.$_SERVER['HTTP_HOST'].'/page/markers/'. $poi['marker_file_name'];
 		$marker = $poi['marker_file_name'];
 
+		//$oObject = ArelXMLHelper::start();
 		$oObject = ArelXMLHelper::createLocationBasedModel3D(
 				$id,
 				$name,
