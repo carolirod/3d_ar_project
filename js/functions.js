@@ -1,18 +1,11 @@
 // Javascript Document
 
 $(document).ready(function(){
-/*
-	$('form').submit(function checkEmpty() {
-	   	var empty = false;
-       	$("input").each(function() {
-           empty = ($(this).val() == "") ? true : empty;
-    	});
-	    if(empty) {
-	        alert("All fields are mandatory");
-	        $(':submit').die();
-       	};
-     });
-*/
+
+	$('button').attr('class', 'buttonTemplate');
+	$('button:first').css('margin-left', '2em');
+	$('label').append('<br/>')
+
 	$('button[name*="remove"]').click(function(){
 		var currentID = $(this).attr('id');
 		IDtoPHP(currentID, "remove");
@@ -22,9 +15,9 @@ $(document).ready(function(){
 		var currentID = $(this).attr('id');
 		IDtoPHP(currentID, "edit");
 	});
-	$('button[name*="new"]').click(function(){
+/*	$('button[name*="new"]').click(function(){
 	  	addNew();		
-	});
+	}); */
 	$('#cancel').click(function(){
 		window.location.href = "../index.php";
 	})
@@ -48,7 +41,3 @@ function IDtoPHP(id, act) {
 		window.location.href = "db/act.php?id=" + id + "&act=edit";
 	}
 };
-
-function addNew(){
-	window.location.href = "db/act.php?act=new";
-}
