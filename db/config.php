@@ -1,14 +1,4 @@
 <?php
-/*
-//For database in amazon
-	$db = "poi";
-	$server = "localhost";
-	$user = "3duser";
-	$pwd = "3duserpwd";
-	$table = "tbl_3d";
-	$connect = mysql_connect($server, $user, $pwd);
-// */
-///*
 // For db in localhost
 $server = "localhost";
 $user = "root";
